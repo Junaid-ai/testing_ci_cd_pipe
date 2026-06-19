@@ -1,0 +1,21 @@
+name: Hello CI/CD
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Build Docker Image
+        run: docker build -t hello-cicd .
+
+      - name: Run Container
+        run: docker run hello-cicd
