@@ -1,0 +1,22 @@
+name: Workflow Name
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  job_name:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Step 1
+        run: echo "Hello"
+
+      - name: Step 2
+        run: echo "World"
